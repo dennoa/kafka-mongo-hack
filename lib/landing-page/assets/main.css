@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(to bottom right, rgb(12, 55, 248), rgb(31, 161, 200)) no-repeat 0 0 fixed;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  font-family: helvetica, sans-serif;
+}
+
+a {
+  color: lightgray;
+}
+
+p {
+  color: lightgray;
+}
+
+.logo svg {
+  width: 200px;
+}

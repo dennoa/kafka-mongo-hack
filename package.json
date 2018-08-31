@@ -1,0 +1,93 @@
+{
+  "name": "node-api-boilerplate",
+  "description": "Starting point for a node api",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node -r esm -r dotenv/config lib",
+    "dev": "nodemon -e js,pug,css -i test -r esm -r dotenv/config lib",
+    "lint": "eslint --ignore-path .gitignore .",
+    "test": "ava",
+    "coverage": "npm test && nyc --reporter html --require esm npm test"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "engines": {
+    "node": ">=8.9.4"
+  },
+  "esm": {
+    "mode": "auto"
+  },
+  "dependencies": {
+    "ajv": "^6.5.0",
+    "axios": "^0.17.1",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "~1.18.2",
+    "compression": "^1.7.2",
+    "cors": "^2.8.4",
+    "deepmerge": "^2.0.1",
+    "dotenv": "^5.0.0",
+    "esm": "^3.0.39",
+    "express": "~4.15.5",
+    "jsonwebtoken": "^8.2.1",
+    "kafka-node": "^2.6.1",
+    "mongoose": "^5.0.6",
+    "path": "^0.12.7",
+    "pug": "^2.0.0",
+    "serve-favicon": "^2.4.5",
+    "swagger-doc-helper": "^1.0.1",
+    "uuid": "^3.2.1",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.14.12",
+    "nyc": "^11.4.1",
+    "sinon": "^4.4.2",
+    "supertest": "^3.0.0"
+  },
+  "homepage": "https://github.com/dennoa/node-api-boilerplate",
+  "lock": false,
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "rules": {
+      "arrow-parens": 0,
+      "indent": [
+        0,
+        4
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "comma-dangle": 0,
+      "linebreak-style": 0,
+      "no-underscore-dangle": 0,
+      "object-curly-newline": 0,
+      "max-len": [
+        1,
+        150,
+        4,
+        {
+          "ignorePattern": "\\s*<"
+        }
+      ]
+    }
+  },
+  "ava": {
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": false,
+    "tap": true,
+    "compileEnhancements": false,
+    "require": [
+      "esm",
+      "dotenv/config"
+    ]
+  }
+}

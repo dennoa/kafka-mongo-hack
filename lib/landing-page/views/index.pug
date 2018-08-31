@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='description', content='#{info.description}')
+        meta(name='author', content='dennoa')
+        meta(name='viewport', content='width=device-width')
+        meta(name='robots', content='noindex')
+        title #{info.name}
+        link(rel='stylesheet', href='main.css')
+    body
+        .logo
+            h1 #{info.name}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="100,10 40,198 190,78 10,78 160,198"></polygon>
+            </svg>
+        p Version #{info.version} running in the #{config.env} environment
+        p <a href="#{info.homepage}">#{info.homepage}</a>
